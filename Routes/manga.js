@@ -1,5 +1,5 @@
-//const auth = require('../Middleware/auth'); //
-const asyncMiddleWare = require('../Middleware/errorAsync'); //importing the middleware
+const auth = require('../Middleware/auth'); //
+//const asyncMiddleWare = require('../Middleware/errorAsync'); //importing the middleware
 const { Manga, validate } = require('../Models/Manga');
 const { Genre } = require('../Models/Genre');
 const express = require('express');
