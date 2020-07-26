@@ -1,4 +1,4 @@
-//const auth = require('../Middleware/auth');
+//const auth = require('../Middleware/auth'); //
 const asyncMiddleWare = require('../Middleware/errorAsync'); //importing the middleware
 const { Manga, validate } = require('../Models/Manga');
 const { Genre } = require('../Models/Genre');
@@ -6,7 +6,7 @@ const express = require('express');
 const router = express.Router();
 const _ = require('lodash');
 
-router.get('/', auth, async (request, response) => {//then inside the asyncMiddleWare, we passing async function as a reference or an argument, go to the errorAsync.js for further explanation
+router.get('/', auth, async (request, response) => { //now, if you check this line, we don't need to use custom asyncErrorMiddleware anymore
     const manga = await Manga.find().sort('name');
     response.send(manga);
 });
@@ -79,3 +79,6 @@ router.delete('/:id', auth, async (req, res) => {
 });
 
 module.exports = router;
+
+//but however, this is the method is faster than previous method, because you just need to import the package at the index of the program, but,
+//if in the future the package has a problem or somehow you can't use it or anything you have another option to use the previous method as well

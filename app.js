@@ -1,4 +1,4 @@
-require('express-async-errors');
+require('express-async-errors'); //to use the express async error yo just need to install it with npm then import it in hereor the index of the program
 const error = require('./Middleware/error'); //calling the middleware function
 const mongoose = require('mongoose');
 const express = require('express');
